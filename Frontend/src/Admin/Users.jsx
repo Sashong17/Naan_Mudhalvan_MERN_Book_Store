@@ -80,26 +80,20 @@ const deleteData = (taskId) => {
     <Table striped bordered hover variant="dark" style={{width:"70%"}}>
       <thead>
         <tr>
-          <th>sl/no</th>
-          <th>UserId</th>
-          <th>User name</th>
-          <th>Email</th>
-          <th>Operation</th>
+          <th style={{color:"gold"}}>Sl/No</th>
+          <th style={{color:"gold"}}>User name</th>
+          <th style={{color:"gold"}}>Email</th>
+          <th style={{color:"gold"}}>Operation</th>
         </tr>
       </thead>
       <tbody>
         {users.map((item, index) => (
           <tr key={item._id}>
             <td>{index + 1}</td>
-            <td>{item._id}</td>
             <td>{item.name}</td>
             <td>{item.email}</td>
             <td>
-              <button style={{ border: 'none', background: 'none' }}>
-                <Link to={`/useredit/${item._id}`} style={{ color: 'blue', textDecoration: 'none' }}>
-                  <FaEdit />
-                </Link>
-              </button>
+              
               <button onClick={() => deleteData(item._id)} style={{ border: 'none', color: 'red', background: 'none' }}>
                 <FaTrash />
               </button>{' '}
@@ -134,10 +128,7 @@ const deleteData = (taskId) => {
                                   <div>
                                     <img src={`http://localhost:4000/${item?.itemImage}`} alt={`${item.itemtype} Image`} style={{ height: "80px" }} />
                                   </div>
-                                  <div>
-                                    <p>Product Name:</p>
-                                    <p>{item.itemname}-{item._id.slice(3, 7)}</p>
-                                  </div>
+                                  
                                   <div>
                                     <p>Orderid:</p>
                                     <p>{item._id.slice(0,10)}</p>

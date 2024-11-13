@@ -2,23 +2,109 @@
 
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import {Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 const Unavbar = () => {
-  const get=localStorage.getItem('user')
+  const user = JSON.parse(localStorage.getItem('user'));
+
   return (
-    <Navbar bg="" variant="dark" expand="lg" style={{backgroundColor:"blue"}}>
+    <Navbar expand="lg" style={{
+        background: 'linear-gradient(90deg, #4b6cb7, #182848)',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        padding: '15px 0'
+      }}>
       <Container>
-        <Navbar.Brand ><Link to='/uhome' style={{color:'white',textDecoration:"none"}}>BookStore</Link></Navbar.Brand>
+        {/* Brand */}
+        <Navbar.Brand>
+          <Link to='/uhome' style={{
+              color: "#f9f9f9",
+              textDecoration: "none",
+              fontWeight: "bold",
+              fontSize: "1.5rem"
+            }}>
+            BookStore
+          </Link>
+        </Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto" >
-            <Link to="/uhome" style={{padding:"10px",color:"white",textDecoration:"none"}}>Home</Link>
-            <Link to="/uproducts" style={{padding:"10px",color:"white",textDecoration:"none"}}>Books</Link>
-            <Link to="/wishlist" style={{padding:"10px",color:"white",textDecoration:"none"}}>Wishlist</Link>
-            <Link to="/myorders" style={{padding:"10px",color:"white",textDecoration:"none"}}>My orders</Link>
-            <Link to="/" style={{paddingLeft:"10px",paddingTop:"10px",color:"white",textDecoration:"none"}}>Logout</Link>
-            <h4 style={{color:"white",paddingTop:"0px"}}>({JSON.parse(get).name} )</h4>
+          {/* Navigation Links */}
+          <Nav className="ml-auto" style={{ display: 'flex', alignItems: 'center' }}>
+            <Link to="/uhome" style={{
+                color: "#e0e0e0",
+                textDecoration: "none",
+                padding: "0 15px",
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                transition: "color 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#4b6cb7'}
+              onMouseLeave={(e) => e.target.style.color = '#e0e0e0'}
+            >
+              Home
+            </Link>
+            <Link to="/uproducts" style={{
+                color: "#e0e0e0",
+                textDecoration: "none",
+                padding: "0 15px",
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                transition: "color 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#4b6cb7'}
+              onMouseLeave={(e) => e.target.style.color = '#e0e0e0'}
+            >
+              Books
+            </Link>
+            <Link to="/wishlist" style={{
+                color: "#e0e0e0",
+                textDecoration: "none",
+                padding: "0 15px",
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                transition: "color 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#4b6cb7'}
+              onMouseLeave={(e) => e.target.style.color = '#e0e0e0'}
+            >
+              Wishlist
+            </Link>
+            <Link to="/myorders" style={{
+                color: "#e0e0e0",
+                textDecoration: "none",
+                padding: "0 15px",
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                transition: "color 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#4b6cb7'}
+              onMouseLeave={(e) => e.target.style.color = '#e0e0e0'}
+            >
+              My Orders
+            </Link>
+            <Link to="/" style={{
+                color: "#e0e0e0",
+                textDecoration: "none",
+                padding: "0 15px",
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                transition: "color 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#4b6cb7'}
+              onMouseLeave={(e) => e.target.style.color = '#e0e0e0'}
+            >
+              Logout
+            </Link>
+
+            {/* User Display */}
+            <h4 style={{
+                color: "#f9f9f9",
+                marginLeft: "15px",
+                fontSize: "1.1rem"
+              }}>
+              ({user.name})
+            </h4>
           </Nav>
         </Navbar.Collapse>
       </Container>

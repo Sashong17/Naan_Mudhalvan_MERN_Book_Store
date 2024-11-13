@@ -215,7 +215,7 @@ function OrderItem() {
     pincode: '',
     state: '',
   });
-  const fee= 99;
+  const fee= 0;
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -328,7 +328,7 @@ function OrderItem() {
   </div>
  </div>
   <br/>
-  <div >
+  <div>
     <div class="input-container">
       <input type="text" id="myInput"  class="w-48 p-2 border border-gray-300 rounded focus:outline-none" placeholder=" "style={{width:"340px"}} 
       name="state"
@@ -339,18 +339,11 @@ function OrderItem() {
         State
       </label>
     </div>
-  </div> <br/>
+    </div> <br/>
              {item && (
                 <div>
-                  <div style={{ display: "flex", justifyContent: "flex-end", height: "100%",width:"100%" }} >
-                  <div style={{ height: "100px",width:"50px" }} >
-                        <img src={`http://localhost:4000/${item?.itemImage}`} alt={`${item.itemtype} Image`} />
-                        {/* <p className='text-end'>{item.itemtype}-{item._id.slice(3, 7)}</p> */}
-                        <p className='text-end'>{item.itemtype}-{item._id ? item._id.slice(3, 7) : ''}</p>
-                    </div>
-                  </div>
                   
-                    <div style={{ display:'flex',justifyContent:"space-between" }}>
+                            <div style={{ display:'flex',justifyContent:"space-between" }}>
                             <p style={{ fontSize: "17px" }}>Price:</p>
                             <p>{item.price}</p>
                     </div>  
@@ -360,7 +353,7 @@ function OrderItem() {
                         </div>
                         <div style={{ display:'flex',justifyContent:"space-between" }}>
                             <p style={{ fontSize: "17px" }}>Total Amount:</p>
-                            <p> {parseInt(item.price, 10) +15}</p>
+                            <p> {parseInt(item.price, 10) +0}</p>
                         </div>
                 </div>
             )}

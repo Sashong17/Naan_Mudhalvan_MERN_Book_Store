@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Vnavbar from './Snavbar';
+import Footer from '../Componenets/Footer';
 
 
 function Additem() {
@@ -53,94 +54,109 @@ const handleSubmit = async (e) => {
   
 
   return (
-    <div> 
-        <Vnavbar/>
-    <div className="max-w-md mx-auto mt-8 p-4 border rounded shadow-lg" style={{backgroundColor:"lightskyblue"}}>
-      <h2 className="text-2xl font-semibold mb-4">Add Furniture</h2>
-      <form onSubmit={handleSubmit}>
-      <div className="mb-4">
-          {/* <label className="block text-gray-600">Car Model</label> */}
-          <input
-            type="text"
-            name="title"
-            placeholder='title'
-            value={formData.title}
-            onChange={handleChange}
-            className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          {/* <label className="block text-gray-600">Car Model</label> */}
-          <input
-            type="text"
-            name="author"
-            placeholder='author'
-            value={formData.author}
-            onChange={handleChange}
-            className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          {/* <label className="block text-gray-600">Car Model</label> */}
-          <input
-            type="text"
-            name="genre"
-            placeholder='genre'
-            value={formData.genre}
-            onChange={handleChange}
-            className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          />
-        </div>
-       
-        <div className="mb-4">
-          {/* <label className="block text-gray-600">Price</label> */}
-          <input
-            type="text"
-            name="price"
-            placeholder='Price'
-            value={formData.price}
-            onChange={handleChange}
-            className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          {/* <label className="block text-gray-600">Car no</label> */}
-          <input
-            type="text"
-            name="description"
-            placeholder='Description'
-            value={formData.description}
-            onChange={handleChange}
-            className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-600">Item Image</label>
-          <input
-            type="file"
-            name="itemImage"
-            accept="image/*"
-            onChange={handleChange}
-            className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-900 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Submit
-        </button>
-      </form>
-   
-    </div>
+    <div>
+      <Vnavbar />
+      <div
+        className="max-w-lg mx-auto mt-12 p-8 bg-gray-900 text-yellow-400 shadow-2xl rounded-lg"
+        style={{
+          boxShadow: "0px 12px 28px rgba(0, 0, 0, 0.1)",
+          borderRadius: "16px",
+        }}
+      >
+        <h2 className="text-4xl font-bold text-center mb-6">Add a New Book</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="space-y-6">
+            <div className="flex flex-col">
+              <label className="text-lg font-semibold text-yellow-400">Book Title</label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter book title"
+                value={formData.title}
+                onChange={handleChange}
+                className="border-2 border-transparent bg-black text-yellow-400 rounded-lg px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label className="text-lg font-semibold text-yellow-400">Author</label>
+              <input
+                type="text"
+                name="author"
+                placeholder="Enter author's name"
+                value={formData.author}
+                onChange={handleChange}
+                className="border-2 border-transparent bg-black text-yellow-400 rounded-lg px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label className="text-lg font-semibold text-yellow-400">Genre</label>
+              <input
+                type="text"
+                name="genre"
+                placeholder="Enter genre"
+                value={formData.genre}
+                onChange={handleChange}
+                className="border-2 border-transparent bg-black text-yellow-400 rounded-lg px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+            </div>
+  
+            <div className="flex flex-col">
+              <label className="text-lg font-semibold text-yellow-400">Price</label>
+              <input
+                type="text"
+                name="price"
+                placeholder="Enter book price"
+                value={formData.price}
+                onChange={handleChange}
+                className="border-2 border-transparent bg-black text-yellow-400 rounded-lg px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+            </div>
+  
+            <div className="flex flex-col">
+              <label className="text-lg font-semibold text-yellow-400">Description</label>
+              <textarea
+                name="description"
+                placeholder="Enter a brief description"
+                value={formData.description}
+                onChange={handleChange}
+                rows="4"
+                className="border-2 border-transparent bg-black text-yellow-400 rounded-lg px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+            </div>
+  
+            <div className="flex flex-col">
+              <label className="text-lg font-semibold text-yellow-400">Book Image</label>
+              <input
+                type="file"
+                name="itemImage"
+                accept="image/*"
+                onChange={handleChange}
+                className="border-2 border-transparent bg-black text-yellow-400 rounded-lg px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+            </div>
+  
+            <div className="text-center mt-6">
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-lg font-semibold py-3 px-8 rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500"
+              >
+                Submit Book
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
+  
 }
 
 export default Additem;

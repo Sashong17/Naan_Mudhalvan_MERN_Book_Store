@@ -45,7 +45,7 @@ const Alogin = () => {
         <div className="relative z-10">  
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-4">
-            Loginto Admin account
+            Login to Admin account
             </h2>
             
           </div>

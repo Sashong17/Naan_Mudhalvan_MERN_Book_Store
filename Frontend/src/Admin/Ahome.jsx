@@ -158,25 +158,25 @@ function Ahome() {
     <div>
         <Anavbar/>
       <h3 className="text-center" style={{color:""}}>DashBoard</h3>
-      <Card body style={{ background: "white", width: "80%", marginLeft: "10%", marginTop: "20px", height: "580px" }}>
+      <Card body style={{ background: "white", width: "80%", marginLeft: "10%", marginTop: "10px", height: "510px" }}>
         <div className="flex justify-around items-center p-4">
            <Link to="/users" style={{textDecoration:"none"}}>
-          <div className="w-64 h-32 bg-red-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
+          <div className="w-64 h-25 bg-red-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
            USERS <br /> <br />{totalUsers}
          </div>
          </Link> 
         <Link to="/vendors" style={{textDecoration:"none"}}>
-         <div className="w-64 h-32 bg-blue-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
+         <div className="w-64 h-25 bg-blue-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
            Vendors <br /> <br /> {totalvendors}
          </div>
          </Link>
          <Link to="/vendors" style={{textDecoration:"none"}}>
-          <div className="w-64 h-32 bg-green-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
+          <div className="w-64 h-25 bg-green-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
            Items <br /> <br />{totalItems}
          </div>
          </Link>
          <Link to="/users" style={{textDecoration:"none"}}>
-          <div className="w-64 h-32 bg-yellow-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
+          <div className="w-64 h-25 bg-yellow-500 rounded-lg shadow-md flex flex-col justify-center items-center text-xl font-bold text-gray-800 text-center">
            Total Orders <br /> <br />{totalOrders}
          </div>
          </Link>

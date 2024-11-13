@@ -47,44 +47,60 @@ function Wishlist() {
   };
 
   return (
-    <div>
-<Unavbar/>
+  <div className="bg-white min-h-screen text-white">
+    <Unavbar />
     <div className="container mx-auto p-8">
-      <h2 className="text-3xl font-semibold mb-4 text-center">Wishlist</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h2 className="text-4xl font-semibold mb-8 text-center" style={{ color: 'black' }}>Wishlist</h2>
+
+      <div className="space-y-6">
         {wishlist.map((item) => (
-          <div key={item._id} className="bg-white p-4 rounded shadow">
-            <img
-              src={`http://localhost:4000/${item.itemImage}`}
-              alt="Item Image"
-              className="rounded-t-lg"
-              style={{ height: '350px', width: '500px' }}
-            />
-            <div>
-              <p className="text-xl font-bold mb-2">{item.title}</p>
-              <p className="text-gray-700 mb-2">Author: {item.author}</p>
-              <p className="text-gray-700 mb-2">Genre: {item.genre}</p>
-              <p className="text-blue-500 font-bold">Price: ${item.price}</p>
+          <div 
+            key={item._id} 
+            className="flex bg-gray-900 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
+          >
+            {/* Left Section: Image with Padding */}
+            <div className="p-4">
+              <img
+                src={`http://localhost:4000/${item.itemImage}`}
+                alt="Item Image"
+                className="object-cover w-56 h-56"
+                style={{ filter: "brightness(0.9)" }}
+              />
+            </div>
 
-              <Button
-                style={{ backgroundColor: 'red', border: 'none' }}
-                onClick={() => removeFromWishlist(item.itemId)}
-              >
-                Remove from Wishlist
-              </Button>
+            {/* Right Section: Content */}
+            <div className="w-2/3 p-6 flex flex-col justify-between">
+              {/* Content */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-2" style={{ color: '#FFD700' }}>{item.title}</h3>
+                <p className="text-sm mb-1" style={{ color: '#FFD700' }}>Author: <span className="text-white">{item.author}</span></p>
+                <p className="text-sm mb-1" style={{ color: '#FFD700' }}>Genre: <span className="text-white">{item.genre}</span></p>
+                <p className="text-lg font-bold mb-4" style={{ color: '#FFD700' }}>Price: <span className="text-white">${item.price}</span></p>
+              </div>
 
-              <Button style={{ backgroundColor: 'rebeccapurple', border: 'none' }}>
-                <Link to={`/uitem/${item.itemId}`} style={{ color: 'white', textDecoration: 'none' }}>
-                  View
-                </Link>
-              </Button>
+              {/* Footer Actions */}
+              <div className="mt-4 flex items-center justify-between">
+                <Button
+                  style={{ backgroundColor: 'red', border: 'none' ,fontWeight:'bold'}}
+                  onClick={() => removeFromWishlist(item.itemId)}
+                >
+                  Remove from Wishlist
+                </Button>
+
+                <Button style={{ backgroundColor: 'gold', border: 'none', fontWeight:'bold'}}>
+                  <Link to={`/uitem/${item.itemId}`} style={{ color: 'black', textDecoration: 'none' ,fontWeight:'bold'}}>
+                    View
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-    </div>
-  );
+  </div>
+);
+
 }
 
 export default Wishlist;
