@@ -1,5 +1,7 @@
 Online Book Store Application
+
 Description
+
 The Online Book Store Application is an e-commerce platform built using the MERN stack (MongoDB, Express.js, React, Node.js). It provides users with a seamless experience to browse, search, and purchase books while offering an efficient management interface for administrators.
 
 This application bridges the gap between traditional bookstores and digital convenience, empowering book lovers and administrators alike with a modern, scalable, and user-friendly solution.
