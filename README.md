@@ -30,6 +30,7 @@ Setup Steps
    
 
    git clone https://github.com/Sashong17/Naan_Mudhalvan_MERN_Book_Store.git
+   
    cd Naan_Mudhalvan_MERN_Book_Store
    
 2. Install dependencies for both frontend and backend:
